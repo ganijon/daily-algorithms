@@ -6,6 +6,15 @@ namespace Graphs.AdjacencyList
     public class Graph
     {
         public List<Node> Nodes = new List<Node>();
+
+
+        public void ResetState()
+        {
+            foreach (var node in Nodes)
+            {
+                node.State = State.UNVISITED;
+            }
+        }
     }
 
     public class Node
@@ -16,7 +25,6 @@ namespace Graphs.AdjacencyList
     }
 
     public enum State { UNVISITED, VISITING, VISITED }
-
     public class Tests
     {
         [SetUp] public void Setup() { Assert.Pass(); }
